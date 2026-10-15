@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101020"><title>THIENTRANADR — Skin Studio</title>
+<style>
+:root{--bg:#090a14;--panel:rgba(16,18,35,.82);--line:rgba(255,255,255,.13);--text:#f6f7ff;--muted:#a9aec7;--pink:#ff4fc8;--cyan:#4de8ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+.backdrop{position:fixed;inset:0;z-index:-2;background:#11152a}.backdrop video{width:100%;height:100%;object-fit:cover;opacity:.38}.backdrop:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,18,.55),#090a14 94%)}
+header{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px clamp(14px,4vw,38px);background:rgba(8,9,20,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.08em}.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--pink),#7358ff);box-shadow:0 0 25px #ff4fc844;font-size:20px}
+.pill{border:1px solid #4de8ff55;border-radius:99px;padding:6px 10px;color:var(--cyan);font-size:12px;white-space:nowrap}
+main{max-width:1120px;margin:auto;padding:24px 16px 110px}.hero{min-height:260px;display:flex;align-items:end;padding:clamp(20px,5vw,42px);border:1px solid var(--line);border-radius:26px;overflow:hidden;position:relative;background:linear-gradient(110deg,rgba(13,14,34,.92),rgba(18,19,43,.28)),url('2009.jpg') center 38%/cover;margin-bottom:22px}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 85% 15%,#ff4fc833,transparent 40%);pointer-events:none}.hero-content{position:relative;z-index:1;max-width:680px}
+.eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.hero h1{font-size:clamp(34px,7vw,64px);line-height:1.02;margin:10px 0 12px;letter-spacing:-.04em}.gradient{background:linear-gradient(90deg,#fff,var(--cyan),var(--pink));color:transparent;background-clip:text}.hero p{color:#d4d7e9;max-width:580px;margin:0}
+.layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(270px,.8fr);gap:20px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 16px 55px #0003;backdrop-filter:blur(16px)}h2{font-size:20px;margin:0 0 6px}.sub{color:var(--muted);font-size:13px;margin:0 0 18px}
+.search{width:100%;padding:14px 15px;background:#070916;border:1px solid var(--line);border-radius:13px;color:white;outline:none;font:inherit}.search:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #4de8ff18}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 16px}.chip,.mode{border:1px solid var(--line);background:#ffffff08;color:#dfe2f4;padding:9px 12px;border-radius:11px;cursor:pointer;font:inherit}.chip.active,.mode.active{border-color:var(--pink);background:#ff4fc81b;color:#fff}
+.catalog{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.skin{border:1px solid var(--line);border-radius:15px;padding:13px;background:#ffffff06;cursor:pointer;min-width:0;transition:.16s}.skin:hover{transform:translateY(-2px);border-color:#4de8ff88}.skin.selected{border-color:var(--cyan);background:#4de8ff12;box-shadow:inset 0 0 0 1px #4de8ff33}.skin .emoji{font-size:28px;display:block;margin-bottom:8px}.skin strong{display:block;overflow-wrap:anywhere}.skin small{color:var(--muted)}.skin .tag{display:inline-block;margin-top:8px;font-size:10px;color:var(--cyan);letter-spacing:.08em}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 18px}.mode{padding:13px 8px;text-align:center}.mode b{display:block;font-size:15px}.mode span{font-size:11px;color:var(--muted)}
+.preview{height:210px;border:1px solid var(--line);border-radius:17px;background:radial-gradient(ellipse,#33335a,#101120 65%);display:grid;place-items:center;text-align:center;margin:14px 0;overflow:hidden}.preview .avatar{font-size:70px;filter:drop-shadow(0 0 18px #ff4fc855)}
+.alok-figure{position:relative;width:92px;height:132px;margin:0 auto 8px;filter:drop-shadow(0 0 16px var(--outfit,#4de8ff));}
+.alok-head{position:absolute;top:17px;left:34px;width:25px;height:29px;background:#b77b58;border-radius:45% 45% 42% 42%;border:2px solid #211c2c}
+.alok-hair{position:absolute;z-index:2;top:11px;left:32px;width:29px;height:17px;background:#211d2b;border-radius:60% 45% 20% 15%;transform:rotate(-8deg)}
+.alok-body{position:absolute;top:43px;left:21px;width:51px;height:48px;background:var(--outfit,#4de8ff);clip-path:polygon(20% 0,80% 0,100% 24%,84% 100%,16% 100%,0 24%);border:1px solid #fff6}
+.alok-body:after{content:"";position:absolute;left:22px;top:0;width:7px;height:45px;background:#10132388}
+.alok-arm{position:absolute;top:47px;width:14px;height:43px;background:#b77b58;border-radius:9px}
+.alok-arm.left{left:12px;transform:rotate(9deg)}.alok-arm.right{right:10px;transform:rotate(-9deg)}
+.alok-leg{position:absolute;top:85px;width:19px;height:42px;background:var(--outfit,#4de8ff);border-radius:4px 4px 7px 7px}
+.alok-leg.left{left:27px;transform:rotate(3deg)}.alok-leg.right{right:25px;transform:rotate(-3deg)}
+.preview strong{display:block;margin-top:4px}.preview small{color:var(--muted)}
+.btn{display:block;width:100%;border:0;border-radius:13px;padding:14px 16px;background:linear-gradient(100deg,#ff4fc8,#795cff);color:#fff;font-weight:850;font-size:15px;cursor:pointer;box-shadow:0 8px 25px #a33eff28}.btn:active{transform:scale(.99)}.btn.secondary{margin-top:9px;background:#ffffff0a;border:1px solid var(--line);box-shadow:none}.note{font-size:12px;color:var(--muted);line-height:1.55;margin-top:14px}.status{display:none;margin-top:12px;border:1px solid #4de8ff55;border-radius:12px;padding:12px;color:#d8fbff;font-size:13px;overflow-wrap:anywhere}.status.show{display:block}
+.sound{display:flex;align-items:center;gap:10px;margin-top:16px}.sound label{font-size:12px;color:var(--muted);white-space:nowrap}.sound input{width:100%;accent-color:var(--pink)}footer{text-align:center;color:#858ba8;font-size:12px;padding:26px 12px 8px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.hero{min-height:245px}.catalog{grid-template-columns:repeat(2,minmax(0,1fr))}header{padding:11px 14px}.pill{font-size:10px}}
+@media(max-width:360px){.catalog{grid-template-columns:1fr}.brand{font-size:12px}}
+</style>
+</head>
+<body>
+<div class="backdrop"><video id="bgVideo" autoplay muted loop playsinline preload="metadata"><source src="2010.mp4" type="video/mp4"></video></div>
+<header><div class="brand"><div class="logo">T</div><span>THIENTRANADR <small style="display:block;color:#9ea4c1;font-size:10px;font-weight:600;letter-spacing:.12em">SKIN STUDIO</small></span></div><span class="pill">✦ SKIN COLLECTION</span></header>
+<main>
+<section class="hero"><div class="hero-content"><div class="eyebrow">CUSTOMIZE YOUR LOOK</div><h1>YOUR GAME.<br><span class="gradient">YOUR STYLE.</span></h1><p>Chọn phong cách yêu thích, tìm kiếm nhanh và tạo gói cấu hình riêng ngay trên điện thoại.</p><div class="sound"><label for="volume">Âm thanh video</label><input id="volume" type="range" min="0" max="100" value="22"><span id="volText" style="font-size:12px;color:#dfe2f4">22%</span></div></div></section>
+<div class="layout">
+<section class="panel"><h2>Chọn trang phục</h2><p class="sub">Tìm skin theo tên hoặc lọc theo bộ sưu tập.</p><input id="search" class="search" type="search" placeholder="⌕  Tìm Alok, Ronaldo, Among Us..." autocomplete="off">
+<div class="filters" id="filters"><button class="chip active" data-filter="all">Tất cả</button><button class="chip" data-filter="classic">Trang phục</button><button class="chip" data-filter="fun">Vui nhộn</button><button class="chip" data-filter="action">Hành động</button></div>
+<div class="catalog" id="catalog"></div><p id="empty" class="note" hidden>Không tìm thấy mục phù hợp. Thử từ khóa khác nhé.</p></section>
+<aside class="panel"><h2>Bản xem trước</h2><p class="sub">Thông tin lựa chọn hiện tại</p>
+<div class="preview"><div><div class="alok-figure" id="alokFigure" aria-label="Xem trước nhân vật Alok">
+<div class="alok-hair"></div><div class="alok-head"></div><div class="alok-body"></div><div class="alok-arm left"></div><div class="alok-arm right"></div><div class="alok-leg left"></div><div class="alok-leg right"></div>
+</div><strong id="previewName">Alok — Áo chiến thuật</strong><small id="previewType">Alok · Áo chiến thuật</small><small id="outfitLabel" style="color:var(--cyan)">Trang phục: Áo chiến thuật</small></div></div>
+<h2 style="font-size:16px">Phiên bản game</h2><div class="modes"><button class="mode active" data-mode="standard"><b>FREE FIRE</b><span>Bản thường</span></button><button class="mode" data-mode="max"><b>FF MAX</b><span>Bản MAX</span></button></div>
+<button class="btn" id="generate">✦ Tạo gói ZIP lựa chọn</button><button class="btn secondary" id="reset">↺ Đặt lại</button>
+<div class="status" id="status" role="status"></div>
+<p class="note">Gói ZIP chứa cấu hình lựa chọn và danh mục skin. Trang này không sửa APK, không tạo tài nguyên game 1,8 MB giả mạo và không tự cài mod/hành động vào Free Fire. Hãy chỉ sử dụng tài nguyên mà bạn có quyền sử dụng.</p></aside>
+</div><footer>THIENTRANADR · SKIN STUDIO · Giao diện tối ưu cho điện thoại</footer>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<script>
+const skins=[
+{name:"Alok — Áo chiến thuật",emoji:"🧍",type:"classic",detail:"Alok · Áo chiến thuật",outfit:"Áo chiến thuật",color:"#4de8ff"},
+{name:"Alok — Đường phố",emoji:"🧍",type:"classic",detail:"Alok · Phong cách đường phố",outfit:"Đường phố",color:"#ff4fc8"},
+{name:"Alok — Bóng đêm",emoji:"🧍",type:"classic",detail:"Alok · Tông đen bí ẩn",outfit:"Bóng đêm",color:"#a99bff"},
+{name:"Alok — Neon",emoji:"🧍",type:"classic",detail:"Alok · Neon nổi bật",outfit:"Neon",color:"#7bffb2"},
+{name:"Alok — Bóng đá Ronaldo",emoji:"⚽",type:"fun",detail:"Alok · Fan outfit Ronaldo",outfit:"Bóng đá Ronaldo",color:"#f4d35e"},
+{name:"Alok — Bóng đá Messi",emoji:"🏆",type:"fun",detail:"Alok · Fan outfit Messi",outfit:"Bóng đá Messi",color:"#91c9ff"},
+{name:"Alok — Neymar vui nhộn",emoji:"🥅",type:"fun",detail:"Alok · Fan outfit Neymar",outfit:"Neymar vui nhộn",color:"#ff9d4d"},
+{name:"Alok — Among Us",emoji:"👾",type:"fun",detail:"Alok · Phong cách Among Us",outfit:"Among Us",color:"#ff6868"},
+{name:"Alok — Nhảy chiến thắng",emoji:"💃",type:"action",detail:"Alok · Hành động được chọn",outfit:"Nhảy chiến thắng",color:"#ff4fc8"},
+{name:"Alok — Điệu nhảy vui",emoji:"🪩",type:"action",detail:"Alok · Hành động được chọn",outfit:"Điệu nhảy vui",color:"#4de8ff"},
+{name:"Alok — Chào đồng đội",emoji:"🙋",type:"action",detail:"Alok · Hành động được chọn",outfit:"Chào đồng đội",color:"#7bffb2"},
+{name:"Alok — Ăn mừng",emoji:"🎉",type:"action",detail:"Alok · Hành động được chọn",outfit:"Ăn mừng",color:"#f4d35e"}
+]
+let selected=skins[0], mode="standard", filter="all";
+const catalog=document.getElementById("catalog"), search=document.getElementById("search");
+function render(){const q=search.value.trim().toLocaleLowerCase("vi");const items=skins.filter(s=>(filter==="all"||s.type===filter)&&s.name.toLocaleLowerCase("vi").includes(q));catalog.innerHTML="";
+items.forEach(s=>{const el=document.createElement("button");el.className="skin"+(selected.name===s.name?" selected":"");el.innerHTML=`<span class="emoji">${s.emoji}</span><strong></strong><small></small><span class="tag">${s.type==="fun"?"FUN COLLECTION":s.type==="action"?"HÀNH ĐỘNG":"SKIN COLLECTION"}</span>`;el.querySelector("strong").textContent=s.name;el.querySelector("small").textContent=s.detail;el.onclick=()=>{selected=s;updatePreview();render()};catalog.appendChild(el)});document.getElementById("empty").hidden=items.length>0}
+function updatePreview(){const figure=document.getElementById("alokFigure");figure.style.setProperty("--outfit",selected.color||"#4de8ff");document.getElementById("previewName").textContent=selected.name;document.getElementById("previewType").textContent=selected.detail;document.getElementById("outfitLabel").textContent="Trang phục: "+(selected.outfit||selected.name)}
+search.addEventListener("input",render);
+document.querySelectorAll("[data-filter]").forEach(b=>b.onclick=()=>{filter=b.dataset.filter;document.querySelectorAll("[data-filter]").forEach(x=>x.classList.toggle("active",x===b));render()});
+document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;document.querySelectorAll("[data-mode]").forEach(x=>x.classList.toggle("active",x===b))});
+const video=document.getElementById("bgVideo"), volume=document.getElementById("volume");volume.addEventListener("input",()=>{video.muted=false;video.volume=Number(volume.value)/100;document.getElementById("volText").textContent=volume.value+"%";if(video.paused)video.play().catch(()=>{})});
+document.getElementById("generate").onclick=async()=>{const status=document.getElementById("status");status.classList.add("show");if(!window.JSZip){status.textContent="Không tải được thư viện tạo ZIP. Hãy kết nối Internet rồi tải lại trang.";return}
+const config={app:"THIENTRANADR Skin Studio",version:1,gameEdition:mode==="max"?"Free Fire MAX":"Free Fire thường",baseCharacter:"Alok",selectedItem:{name:selected.name,category:selected.type,display:selected.detail,outfit:selected.outfit,previewColor:selected.color,emoji:selected.emoji},generatedAt:new Date().toISOString(),notice:"Đây là cấu hình lựa chọn, không phải tài nguyên thay thế nhân vật trong game."};
+const zip=new JSZip();zip.file("THIENTRANADR/config.json",JSON.stringify(config,null,2));zip.file("THIENTRANADR/skin-catalog.json",JSON.stringify(skins,null,2));zip.file("THIENTRANADR/README.txt","THIENTRANADR Skin Studio\n\nGói này chứa cấu hình lựa chọn và danh mục skin.\nKhông chứa file tài nguyên Free Fire/Free Fire MAX và không tự cài đặt vào game.\n");try{const blob=await zip.generateAsync({type:"blob",compression:"DEFLATE"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="THIENTRANADR-"+(mode==="max"?"FFMAX":"FreeFire")+"-"+selected.name.toLowerCase().replace(/[^a-z0-9]+/g,"-")+".zip";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);status.textContent="Đã tạo gói ZIP cấu hình cho "+(mode==="max"?"Free Fire MAX":"Free Fire thường")+" — "+selected.name+". Gói không thay thế trực tiếp tài nguyên trong game."}catch(e){status.textContent="Không thể tạo ZIP trên thiết bị này. Hãy thử lại bằng trình duyệt mới hơn."}};
+document.getElementById("reset").onclick=()=>{selected=skins[0];mode="standard";filter="all";search.value="";document.querySelectorAll("[data-mode]").forEach(x=>x.classList.toggle("active",x.dataset.mode===mode));document.querySelectorAll("[data-filter]").forEach(x=>x.classList.toggle("active",x.dataset.filter===filter));document.getElementById("status").classList.remove("show");updatePreview();render()};
+video.volume=.22;render();updatePreview();
+</script>
+</body></html>
